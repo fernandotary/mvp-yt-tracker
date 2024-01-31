@@ -21,7 +21,7 @@ def get_date_input():
             "Select a start date", min_value=date(2024, 1, 5))
     with d_col2:
         st_finish_date = st.date_input(
-            "Select an end date", max_value=date(2024, 1, 29))
+            "Select an end date")
 
     begin_date, finish_date = format_dates(st_begin_date, st_finish_date)
 

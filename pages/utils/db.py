@@ -10,7 +10,7 @@ def get_documents(channel_name, begin_date, finish_date):
     try:
         client = MongoClient(uri, tlsCAFile=ca)
         db = client['YNews']
-        collection = db['y_channel_backup_2']
+        collection = db['y_channel_token_bck']
 
         documents = collection.find({"channel_name": channel_name, "publishedAt": {
                                     "$gte": begin_date, "$lte": finish_date}}, {"token": 1})

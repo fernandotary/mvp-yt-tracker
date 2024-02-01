@@ -12,14 +12,13 @@ def main():
 
     st.title("Youtube Channel Tracker")
     st.divider()
-    channel_name = get_channel_input()
+    channel_id = get_channel_input()
     begin_date, finish_date = get_date_input()
 
-    documents = get_documents(channel_name, begin_date, finish_date)
+    documents = get_documents(channel_id, begin_date, finish_date)
 
     corpus = fetch_documents(documents)
     st.divider()
-
 
     tab1, tab2 = st.tabs(["Wordcloud", "Barchart"])
     with tab1:

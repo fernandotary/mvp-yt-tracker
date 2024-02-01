@@ -3,6 +3,13 @@ from datetime import datetime
 from datetime import date
 
 
+dict_channel_names = {
+    "Teleamazonas": "UCCwRtme3lumNRQXMO2EvCvw",
+    "Ecuavisa": "UCRUV3nUNSc-xpBrTwQOCQQg",
+    "TC Televisión": "UCMDsWeFwRQ5BRzNLFzpc-ew",
+    "Café la Posta": "UCLCCMz3exOqYc59IN0VOLlA",
+    "BN Periodismo": "UCk3eFaIQTyb-i_P5qrfhLVg"
+}
 # Channel
 
 
@@ -10,7 +17,8 @@ def get_channel_input():
     channel_name = st.selectbox(
         'Which channel do you want to search?',
         ['Teleamazonas', 'Ecuavisa', 'TC Televisión', 'Café la Posta', 'BN Periodismo'])
-    return channel_name
+
+    return dict_channel_names.get(channel_name)
 
 
 # Date
@@ -18,7 +26,7 @@ def get_date_input():
     d_col1, d_col2 = st.columns(2)
     with d_col1:
         st_begin_date = st.date_input(
-            "Select a start date", min_value=date(2024, 1, 5))
+            "Select a start date", min_value=date(2024, 1, 5), value=date(2024, 1, 27))
     with d_col2:
         st_finish_date = st.date_input(
             "Select an end date")

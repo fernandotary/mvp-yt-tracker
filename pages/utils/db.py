@@ -15,8 +15,6 @@ def get_documents(channel_id, begin_date, finish_date):
         count_with_token = collection.count_documents(
             {'token': {'$exists': True}})
 
-        st.write(count_with_token)
-
         documents = collection.find({"channel_id": channel_id, "publishedAt": {
                                     "$gte": begin_date, "$lte": finish_date}})
         return documents

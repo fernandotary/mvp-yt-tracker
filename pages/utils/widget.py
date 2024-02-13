@@ -18,7 +18,7 @@ def get_channel_input():
         'Which channel do you want to search?',
         ['Teleamazonas', 'Ecuavisa', 'TC Televisión', 'Café la Posta', 'BN Periodismo'])
 
-    return dict_channel_names.get(channel_name)
+    return channel_name
 
 
 # Date
@@ -26,7 +26,7 @@ def get_date_input():
     d_col1, d_col2 = st.columns(2)
     with d_col1:
         st_begin_date = st.date_input(
-            "Select a start date", min_value=date(2024, 1, 5), value=date(2024, 1, 27))
+            "Select a start date", min_value=date(2024, 2, 2), value=date(2024, 2, 2))
     with d_col2:
         st_finish_date = st.date_input(
             "Select an end date")
